@@ -6,6 +6,10 @@ export const MovieSchema = z.object({
     title: z.string(),
     description: z.string(),
     rating: z.number(),
+    background: z.string(),
 });
 
+export const MoviesSchema = z.array(MovieSchema);
+
 export type Movie = z.infer<typeof MovieSchema>;
+export type Movies = Movie[];

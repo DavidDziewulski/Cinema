@@ -1,5 +1,5 @@
 export const queryKeys = {
-    getMovies: () => ['movies'],
+    getMovies: (title: string) => ['movies',title],
     // productionOrder: (productionOrderId: string) => [
     //     queryKeys.productionOrders(),
     //     productionOrderId,

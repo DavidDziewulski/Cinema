@@ -8,7 +8,7 @@ export const  Header = () => {
       <div className="w-1/3"></div>
       <SearchBar />
       <div className="w-1/3 flex justify-end items-center space-x-4">
-        <span className="text-sm font-medium">HOME</span>
+        {/* <span className="text-sm font-medium">HOME</span> */}
         <Profile />
       </div>
     </header>

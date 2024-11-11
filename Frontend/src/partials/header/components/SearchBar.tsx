@@ -21,14 +21,13 @@ export const SearchBar = () => {
     };
 
     return (
-    
     <div className="w-1/3 flex justify-center">
         <div className="relative w-full max-w-md">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
           <Input
             type="search"
             placeholder="Szukaj..."
-            className="pl-10 pr-4 w-full"
+            className="pl-10 pr-4 w-full border border-black" 
             value={paramsValue}
             onChange={handleInputChange}
           />
