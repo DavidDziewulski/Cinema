@@ -5,7 +5,6 @@ export const moviesEuropa = {
   description: 'A Jewish boy in Nazi Germany disguises himself as a member of the Hitler Youth.',
   rating: 7.6,
   background: 'https://multikino.pl/-/jssmedia/multikino/images/film-and-events/2024/vaiana-2/vaiana-2-plakat.jpg?mw=208&rev=b07d707b113949df8800acb69759634c',
-
 };
 
 export const movies = [
@@ -217,5 +216,18 @@ export const movies = [
 
     },
 ];
-   
+
+export const movie = {
+  id: '5',
+  authorName: 'Agnieszka Holland',
+  title: 'Europa Europa',
+  description: 'A Jewish boy in Nazi Germany disguises himself as a member of the Hitler Youth.',
+  rating: 7.6,
+  releaseDate: '29 lis 2024',
+  director: 'David G. Derrick Jr.',
+  duration: '1 godz. 40 min.',
+  cast: "Dwayne Johnson, Auli'i Cravalho",
+  background: 'https://multikino.pl/-/jssmedia/multikino/images/film-and-events/2024/vaiana-2/vaiana-2-plakat.jpg?mw=208&rev=b07d707b113949df8800acb69759634c',
+};
+
   

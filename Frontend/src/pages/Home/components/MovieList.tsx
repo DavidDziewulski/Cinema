@@ -22,6 +22,7 @@ export const MovieList = () => {
 
   const cardList = vm.data.map((card) => (
     <Card
+      onClick={() => vm.navigate(`/movie/${card.id}`)}
       key={card.id}
       className="shadow-lg hover:shadow-2xl transition-transform duration-300 transform hover:scale-105 cursor-pointer" // Dodano animację i cursor-pointer
     >

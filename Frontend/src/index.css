@@ -137,3 +137,8 @@ html, body {
 	}
 }
 
+.fc-v-event {
+	background-color: white !important;
+    border: none !important;
+    display: block;
+}
