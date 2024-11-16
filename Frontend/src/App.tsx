@@ -18,9 +18,9 @@ export const AppContext = createContext<ContextType>({
     });
 
 export const App = () => {
-    useEffect(() => {
-        mockAdapter();
-    }, [])
+    // useEffect(() => {
+    //     mockAdapter();
+    // }, [])
     
     const [ active, setActive ] = useState(false);
 

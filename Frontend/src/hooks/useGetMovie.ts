@@ -6,14 +6,14 @@ import { useParams } from 'react-router-dom';
 
 export const useGetMovie = () => {
     const { id } = useParams<{id: string}>();
-    id;
 
+    console.log(id,'id')
 
     const query = useQuery({
-        queryKey: queryKeys.getMovie('1'),
+        queryKey: queryKeys.getMovie(id ?? '0'),
         queryFn: () =>
             request({
-                url: `movie/${1}`,
+                url: `movies/${id}`,
                 method: 'GET',
                 schema: MovieSchema,
                 onError: error => {

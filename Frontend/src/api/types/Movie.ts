@@ -11,6 +11,15 @@ export const MovieSchema = z.object({
     duration: z.string(),
     cast: z.string(),
     background: z.string(),
+    events: z.object({
+        id: z.string(),
+        title: z.string(),
+        start: z.string(),
+        end: z.string(),
+        availableSeats: z.number(),
+        price: z.number(),
+        description: z.string(),
+    }).array()
 });
 
 export const MoviesSchema = z.object({

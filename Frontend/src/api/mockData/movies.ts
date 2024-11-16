@@ -228,6 +228,26 @@ export const movie = {
   duration: '1 godz. 40 min.',
   cast: "Dwayne Johnson, Auli'i Cravalho",
   background: 'https://multikino.pl/-/jssmedia/multikino/images/film-and-events/2024/vaiana-2/vaiana-2-plakat.jpg?mw=208&rev=b07d707b113949df8800acb69759634c',
+  events: [
+    { 
+      id: '11',
+      title: 'Sala 1',
+      start: '2024-11-27T12:00:00',
+      end: '2024-11-27T14:00:00',
+      availableSeats: 50,
+      price: 20,
+      description: 'Film animowany dla całej rodziny. Przyjdź i baw się dobrze!',
+    },
+    {
+      id: '2',
+      title: 'Sala 2',
+      start: '2024-11-28T15:00:00',
+      end: '2024-11-28T17:00:00',
+      availableSeats: 30,
+      price: 20,
+      description: 'Drugi seans, świetna komedia, która rozśmieszy każdego!', // Dodano opis
+  }
+  ]
 };
 
   

@@ -31,7 +31,7 @@ export const request = async <T extends z.ZodSchema>({
     type = 'json',
 }: Props<T>): Promise<z.output<T>> => {
     // implement auth getting here
-    const baseUrl = '';
+    const baseUrl = 'http://localhost:5223';
     const token = '';
 
     const contentType = data instanceof FormData ? 'multipart/form-data' : 'application/json';

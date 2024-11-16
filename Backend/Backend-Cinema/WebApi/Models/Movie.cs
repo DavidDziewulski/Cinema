@@ -1,6 +1,6 @@
 namespace WebApi.Models;
 
-public class MovieDetail: MovieListItem
+public class Movie
 {
     public string Id { get; set; }
     public string AuthorName { get; set; }
@@ -12,5 +12,6 @@ public class MovieDetail: MovieListItem
     public string Director { get; set; }
     public string Duration { get; set; }
     public string Cast { get; set; }
-    public List<Event> Events { get; set; }
+    
+    public List<string> EventIds { get; set; }
 }

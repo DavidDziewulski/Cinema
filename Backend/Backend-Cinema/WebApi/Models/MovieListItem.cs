@@ -2,9 +2,15 @@ namespace WebApi.Models;
 
 public class MovieListItem
 {
-    public int Id { get; set; }
+    public string Id { get; set; }
+    
+    public string AuthorName { get; set; }
+    
     public string Title { get; set; }
-    public string Director { get; set; }
-    public DateTime ReleaseDate { get; set; }
-    // Dodaj inne właściwości według potrzeb
+    
+    public string Description { get; set; }
+    
+    public double Rating { get; set; }
+    
+    public string Background { get; set; }
 }
