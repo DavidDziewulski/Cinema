@@ -73,9 +73,7 @@ export const Movie = () => {
                 </Card>
                 {vm.selectedEvent && (
                 <ReservationModal
-                    title={vm.selectedEvent.title}
-                    description={vm.selectedEvent.description}
-                    picture={vm.selectedEvent.background}
+                    event={vm.selectedEvent}
                     handleCloseModal={vm.handleCloseModal}
                 />
                 )}

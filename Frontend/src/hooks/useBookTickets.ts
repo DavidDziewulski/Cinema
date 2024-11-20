@@ -2,31 +2,33 @@ import { request } from '@/lib/Client/apiClient';
 import { queryKeys } from '@/lib/Client/queryKeys';
 import { queryClient } from '@/lib/queryClient/queryClient';
 import { useMutation } from '@tanstack/react-query';
+import { useParams } from 'react-router-dom';
 import { z } from 'zod';
 
-const ResponseValidationSchema = z.object({
-    id: z.string(),
-});
+const ResponseValidationSchema = z.string();
 
 type InputData = {
-    id: string;
+    eventId: string;
     amount: number;
 }
 
-export const useGetMovie = () => {
+export const useBokkTickets = () => {
+    const { id } = useParams<{id: string}>();
+
     return useMutation(
         {
             mutationFn:  (input: InputData) => 
                 request({
-                    url: `movie/${1}`,
+                    url: `event/${input.eventId}/reservation`,
                     method: 'post',
                     schema: ResponseValidationSchema,
-                    data: input,
+                    data: {amount: input.amount},
                 }),
-            onSuccess: (_,variable) => queryClient.refetchQueries({
-                queryKey: queryKeys.getMovie(variable.id)
-            }),
+            onSuccess: () => {
+                queryClient.refetchQueries({
+                queryKey: queryKeys.getMovie(id ?? '0')
+            })
+        }
         },
     )
-
 };

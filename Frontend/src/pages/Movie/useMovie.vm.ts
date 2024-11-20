@@ -1,8 +1,6 @@
-import { Movie } from "@/api/types/Movie";
+import { Event } from "@/api/types/Movie";
 import { useGetMovie } from "@/hooks/useGetMovie";
 import { useState } from "react";
-
-type Event = Movie['events'][0] & {background: string};
 
 export const useMovieVm = () => {
     const {data, isLoading, isError} = useGetMovie();

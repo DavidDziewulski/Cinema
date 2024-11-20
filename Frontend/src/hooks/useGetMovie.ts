@@ -6,9 +6,7 @@ import { useParams } from 'react-router-dom';
 
 export const useGetMovie = () => {
     const { id } = useParams<{id: string}>();
-
-    console.log(id,'id')
-
+    console.log('params',id);
     const query = useQuery({
         queryKey: queryKeys.getMovie(id ?? '0'),
         queryFn: () =>
