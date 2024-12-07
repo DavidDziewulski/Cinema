@@ -1,20 +1,56 @@
-import { AppContext } from "@/App";
+import { useLogin } from "@/hooks/useLogin";
+import { useStore } from "@/hooks/useStore";
 import { paths } from "@/router/Router";
-import { useContext } from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-export const LoginPage = () => {
-  const { isActive, toggleActive } = useContext(AppContext);
+type FormValues = {
+  email: string;
+  password: string;
+};
 
+export const LoginPage = () => {
   const navigate = useNavigate();
 
-  if (isActive) {
-    navigate(paths.home);
-    return null;
+  const { mutate } = useLogin();
+
+  const { 
+    isAuthenticated,
+  } = useStore();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isDirty },
+  } = useForm<FormValues>({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+    mode: "onSubmit",
+  });
+
+
+  if(isAuthenticated){
+    navigate(paths.home)
+    return;
   }
 
+  const isError = Object.keys(errors).length > 0;
+
+  const onSubmit = handleSubmit((data) => {
+    if (isError) {
+      return;
+    }
+
+    mutate(data);
+  });
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+    <form
+      onSubmit={onSubmit}
+      className="flex items-center justify-center min-h-screen bg-gray-900"
+    >
       <div className="w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
         <div className="px-6 py-4">
           <div className="flex justify-center mx-auto">
@@ -32,21 +68,52 @@ export const LoginPage = () => {
               className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
               type="email"
               placeholder="Email"
-              aria-label="Email"
+              {...register("email", {
+                required: "Email jest wymagany",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Podaj poprawny adres email",
+                },
+              })}
             />
+            {errors.email && (
+              <span className="text-red-500 text-sm">
+                {errors.email.message}
+              </span>
+            )}
           </div>
           <div className="w-full mt-4">
             <input
               className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
               type="password"
               placeholder="Hasło"
-              aria-label="Hasło"
+              {...register("password", {
+                required: "Hasło jest wymagane",
+                pattern: {
+                  value: /^(?=.*[A-Z])(?=.*\W)/,
+                  message:
+                    "Hasło musi zawierać co najmniej jedną dużą literę i jeden znak specjalny",
+                },
+                minLength: {
+                  value: 8,
+                  message: "Hasło musi mieć co najmniej 8 znaków",
+                },
+              })}
             />
+            {errors.password && (
+              <span className="text-red-500 text-sm">
+                {errors.password.message}
+              </span>
+            )}
           </div>
           <div className="flex items-center justify-self-end mt-4">
             <button
-              onClick={toggleActive}
-              className="px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+              disabled={!isDirty}
+              className={`px-6 py-2 text-sm font-medium tracking-wide capitalize transition-colors duration-300 transform rounded-lg focus:outline-none focus:ring focus:ring-opacity-50 ${
+                isDirty && !isError
+                  ? "bg-blue-500 text-white hover:bg-blue-400 focus:ring-blue-300"
+                  : "bg-gray-500 text-gray-300 cursor-not-allowed"
+              }`}
             >
               Zaloguj
             </button>
@@ -64,6 +131,6 @@ export const LoginPage = () => {
           </a>
         </div>
       </div>
-    </div>
+    </form>
   );
 };

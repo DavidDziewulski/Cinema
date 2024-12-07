@@ -1,12 +1,12 @@
 import { ErrorDisplay } from '@/components/error-display';
 import { Spinner } from '@/components/spinner';
 import { Card } from '@/components/ui/card';
-import { Header } from '@/partials/header/Header';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import { useMovieVm } from './useMovie.vm';
 import { ReservationModal } from './ReservationModal';
+import { useMovieVm } from './useMovie.vm';
+import { truncateText } from '@/lib/utils';
 
 export const Movie = () => {
     const vm = useMovieVm();
@@ -27,13 +27,13 @@ export const Movie = () => {
         return (
             <div className="p-2 bg-black bg-opacity-80 text-gray-200 rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <div className="text-lg font-semibold">
-                    {eventInfo.timeText}
+                    {truncateText(eventInfo.timeText,20)}
                 </div>
                 <div className="text-sm font-medium">
                     {eventInfo.event.title}
                 </div>
                 <div className="text-xs text-gray-400">
-                    {eventInfo.event.extendedProps.description}
+                    {truncateText(eventInfo.event.extendedProps.description,40)}
                 </div>
             </div>
         );
@@ -41,7 +41,6 @@ export const Movie = () => {
 
     return (
         <div className="w-4/5 mx-auto min-h-screen">
-            <Header isSearch={false} />
             <div className="flex flex-col mt-8">
             <Card className="flex flex-col md:flex-row bg-black bg-opacity-80 p-6 shadow-lg">
                     <div

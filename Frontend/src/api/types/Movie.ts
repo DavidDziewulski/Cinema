@@ -33,3 +33,4 @@ export const MoviesSchema = z.object({
 
 export type Movie = z.infer<typeof MovieSchema>;
 export type Movies = z.infer<typeof MovieSchema>[]
+export type Event = z.infer<typeof MovieSchema>['events'][0]

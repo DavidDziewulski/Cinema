@@ -1,4 +1,3 @@
-
 export const Search = () => (
     <>
         <label htmlFor="simple-search" className="sr-only">Search</label>

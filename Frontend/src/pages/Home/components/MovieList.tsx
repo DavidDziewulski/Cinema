@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { useMovieListVm } from "./useMovieList.vm"
 import { Spinner } from "@/components/spinner";
 import { ErrorDisplay } from "@/components/error-display";
+import { truncateText } from "@/lib/utils";
 
 // Przykładowe dane dla kart
 export const MovieList = () => {
@@ -32,8 +33,8 @@ export const MovieList = () => {
           style={{ backgroundImage: `url(${card.background})` }}
         />
         <div className="p-4 bg-black bg-opacity-50 flex flex-col justify-end h-36">
-          <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
-          <p className="text-sm text-gray-200 mb-2">{card.description}</p>
+          <h3 className="text-xl font-bold text-white mb-2">{truncateText(card.title,20)}</h3>
+          <p className="text-sm text-gray-200 mb-2">{truncateText(card.description,107)}</p>
           <div className="flex items-center">
             <Stars rating={card.rating} />
             <span className="ml-2 text-sm text-white">{card.rating.toFixed(1)}</span>

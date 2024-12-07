@@ -21,6 +21,8 @@ type Props<T extends z.ZodSchema> = {
     onError?: (err: Error) => z.output<T> | void;
 };
 
+const TOKEN_KEY = "authToken";
+
 export const request = async <T extends z.ZodSchema>({
     url,
     onError,
@@ -32,7 +34,7 @@ export const request = async <T extends z.ZodSchema>({
 }: Props<T>): Promise<z.output<T>> => {
     // implement auth getting here
     const baseUrl = 'http://localhost:5223';
-    const token = '';
+    const token = localStorage.getItem(TOKEN_KEY);
 
     const contentType = data instanceof FormData ? 'multipart/form-data' : 'application/json';
 
