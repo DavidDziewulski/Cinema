@@ -10,7 +10,7 @@ export const Header = ({isSearch = true }: Props) => {
   const nav = useNavigate();
 
   return (
-    <header className="flex items-center justify-evenly px-6 py-4 bg-background border-b">
+    <header style={{ borderBottom: '1px solid #7c7474' }} className="flex items-center justify-evenly px-6 py-4 bg-inherit border-b border-black">
       <img 
         className="w-auto h-7 sm:h-8"
         src="https://merakiui.com/images/logo.svg" 

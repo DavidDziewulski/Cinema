@@ -66,7 +66,7 @@ export const EventModal = ({ reservation, handleCloseModal }: Props) => {
   const editForm = isEdit && (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div>
-        <label htmlFor="numberOfTickets" className="block font-medium">
+        <label htmlFor="numberOfTickets" className="block font-medium text-white">
           Liczba biletów które chcę zarezerwować:
         </label>
         <Input
@@ -84,7 +84,7 @@ export const EventModal = ({ reservation, handleCloseModal }: Props) => {
       <div className="flex gap-3">
         <Button
           type="button"
-          className="w-full bg-red-700"
+          className="w-full bg-red-700 hover:bg-red-600 text-white"
           onClick={() => {
             setIsEdit((prev) => !prev);
             reset();
@@ -94,7 +94,7 @@ export const EventModal = ({ reservation, handleCloseModal }: Props) => {
         </Button>
         <Button
           type="submit"
-          className="w-full bg-green-500"
+          className="w-full bg-green-500 hover:bg-green-400 text-white"
           disabled={!isValid}
         >
           Zapisz zmiany
@@ -102,14 +102,14 @@ export const EventModal = ({ reservation, handleCloseModal }: Props) => {
       </div>
     </form>
   );
-
+  
   return (
     <div>
-      <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
-        <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg h-auto relative flex flex-col space-y-4">
+      <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-[0.8px] z-50">
+        <div className=" p-6 rounded-lg shadow-lg w-full bg-black/50  max-w-lg h-auto relative flex flex-col space-y-4 text-white">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-bold">{reservation.title}</h2>
-            <Button variant="ghost" onClick={handleCloseModal}>
+            <Button variant="ghost" onClick={handleCloseModal} className="text-white">
               X
             </Button>
           </div>
@@ -120,9 +120,11 @@ export const EventModal = ({ reservation, handleCloseModal }: Props) => {
               className="w-full h-32 object-cover rounded"
             />
           </div>
-          <p className="text-gray-700 mb-4">{reservation.description}</p>
-          <p>Liczba dostępnych biletów: {reservation.event.availableSeats}</p>
-          <p>
+          <p className="text-gray-300 mb-4">{reservation.description}</p>
+          <p className="text-gray-300">
+            Liczba dostępnych biletów: {reservation.event.availableSeats}
+          </p>
+          <p className="text-gray-300">
             Liczba zarezerwowanych biletów przez Ciebie: {reservation.amount}
           </p>
           {!isEdit && (
@@ -131,14 +133,13 @@ export const EventModal = ({ reservation, handleCloseModal }: Props) => {
                 <Button
                   onClick={handleRemoveReservation}
                   type="button"
-                  className="w-full bg-red-700"
+                  className="w-full bg-red-700 hover:bg-red-600 text-white"
                 >
                   Anuluj rezerwacje
                 </Button>
                 <Button
                   type="button"
-                  className="w-full bg-blue-600"
-                  //   disabled={!isValid}
+                  className="w-full bg-blue-600 hover:bg-blue-500 text-white"
                   onClick={() => setIsEdit((prev) => !prev)}
                 >
                   Edytuj rezerwacje
@@ -150,5 +151,5 @@ export const EventModal = ({ reservation, handleCloseModal }: Props) => {
         </div>
       </div>
     </div>
-  );
+  );  
 };

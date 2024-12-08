@@ -42,7 +42,7 @@ export const Movie = () => {
     return (
         <div className="w-4/5 mx-auto min-h-screen">
             <div className="flex flex-col mt-8">
-            <Card className="flex flex-col md:flex-row bg-black bg-opacity-80 p-6 shadow-lg">
+            <Card className="flex flex-col md:flex-row bg-#8a8a8a p-6 shadow-lg">
                     <div
                         className="w-full md:w-1/4 h-64 md:h-auto bg-cover bg-center rounded-lg"
                         style={{ backgroundImage: `url(${vm.data.background})` }}
@@ -50,7 +50,7 @@ export const Movie = () => {
                     <div className="flex flex-col justify-start p-6 md:w-3/4 space-y-4">
                         <h3 className="text-4xl font-bold text-white mb-2">{vm.data.title}</h3>
                         <p className="text-lg text-gray-300 mb-4">{vm.data.description}</p>
-                        <div className="grid grid-cols-2 gap-4 text-gray-400">
+                        <div className="grid grid-cols-2 gap-4 text-gray-300">
                             <div>
                                 <h4 className="text-sm font-semibold">Data premiery</h4>
                                 <p className="text-sm">{vm.data.releaseDate || "29 lis 2024"}</p>

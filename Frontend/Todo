@@ -1,0 +1,26 @@
+# TODO
+
+## 1. Mój Kalendarz
+
+- [x] Przygotowanie endpointa i modelu BE
+- [x] Obsluga tego ednpointa po stronie FE 1.[x] Uzytkownik klika na event 2. [x] System otwiera Modal 3. Modal zawiera:
+      [x] Tytul filmu
+      [x] Opis Filmu
+      [x] Zdjecie Filmu
+      [x] Ile miejsc zarezerowal uzytkownik
+      [x] Mozliwosc usuniecia Rezerwacji
+      [x] FE useDeleteReservation
+      [x] BE /delete
+      [x] Mozliwosc edycji rezerwacji
+      [x] FE useUpdateReservation
+      [x] BE /update
+- [x] Zwrocenie tylko rezerwacji uzytkownika
+
+## 2. Główna Strona
+
+- [x] Zamokować poprawne zdjecia
+- [x] Poprawic wyglad kafelków
+
+## 3. Rezerwacja
+
+- [x] Poprawić wygląd rezerwacji Modal

@@ -34,7 +34,7 @@ type Props = {
 
 export const ReservationModal = ({ event, handleCloseModal }: Props) => {
   const { mutate } = useBookReservation();
-
+console.log(event.availableSeats)
   const {
     register,
     handleSubmit,
@@ -47,16 +47,19 @@ export const ReservationModal = ({ event, handleCloseModal }: Props) => {
   });
 
   const onSubmit = (data: ReservationFormInputs) => {
-    mutate({ eventId: event.id, amount: data.numberOfTickets });
+    mutate(
+      { eventId: event.id, amount: data.numberOfTickets },
+      { onSuccess: () =>  handleCloseModal() }
+    );
   };
 
   return (
     <div>
-      <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
-        <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg h-auto relative flex flex-col space-y-4">
+      <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-[5px] z-50">
+        <div className=" p-6 rounded-lg shadow-lg w-full max-w-lg h-auto bg-black/50 relative flex flex-col space-y-4 text-white">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-bold">{event.title}</h2>
-            <Button variant="ghost" onClick={handleCloseModal}>
+            <Button variant="ghost" onClick={handleCloseModal} className="text-white">
               X
             </Button>
           </div>
@@ -67,18 +70,18 @@ export const ReservationModal = ({ event, handleCloseModal }: Props) => {
               className="w-full h-32 object-cover rounded"
             />
           </div>
-          <p className="text-gray-700 mb-4">{event.description}</p>
-          <p>Liczba dostępnych biletów: {event.availableSeats}</p>
+          <p className="text-gray-300 mb-4">{event.description}</p>
+          <p className="text-gray-300">Liczba dostępnych biletów: {event.availableSeats}</p>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div>
-              <label htmlFor="numberOfTickets" className="block font-medium">
+              <label htmlFor="numberOfTickets" className="block font-medium text-white">
                 Liczba biletów
               </label>
               <Input
                 type="number"
                 id="numberOfTickets"
                 {...register("numberOfTickets", { valueAsNumber: true })}
-                className="mt-1 block w-full"
+                className="mt-1 block w-ful"
               />
               {errors.numberOfTickets && (
                 <p className="text-red-500 text-sm mt-1">
@@ -86,7 +89,7 @@ export const ReservationModal = ({ event, handleCloseModal }: Props) => {
                 </p>
               )}
             </div>
-            <Button type="submit" className="w-full" disabled={!isValid}>
+            <Button type="submit" className="w-full bg-gray-700 hover:bg-gray-600" disabled={!isValid}>
               Zarezerwuj
             </Button>
           </form>
