@@ -106,6 +106,7 @@ Składa się z backendu i frontendu, oferując użytkownikom funkcjonalności ta
 ### Rezerwacja biletów
 ![Rezerwacja biletów](![image](https://github.com/user-attachments/assets/11d9f683-8dc0-4c7e-98c7-d753f923f4ef)
 )
+https://github.com/user-attachments/assets/11d9f683-8dc0-4c7e-98c7-d753f923f4ef
 
 ### Kalendarz Użytkownika
 ![Rezerwacja biletów](![image](![image](https://github.com/user-attachments/assets/208df778-4a88-46ce-ab73-eee28460895b))
