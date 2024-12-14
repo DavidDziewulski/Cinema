@@ -116,7 +116,7 @@ export const useStore = create<UseStore>((set, get) => {
   
         const timeoutId = setTimeout(() => {
           get().refreshAuthToken();
-        }, timeUntilExpiration - 8000);
+        }, timeUntilExpiration - 20000);
   
         set((state) => ({ timeoutIds: [...state.timeoutIds, timeoutId] }));
       }
