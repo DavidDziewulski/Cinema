@@ -1,8 +1,8 @@
 namespace WebApi.Models.DTO;
 
-public class MovieListItemDTO
+public class MovieListItemDto
 {
-    public string  Id { get; set; }
+    public Guid  Id { get; set; }
     
     public string AuthorName { get; set; }
     

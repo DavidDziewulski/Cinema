@@ -2,7 +2,7 @@ namespace WebApi.Models.DTO;
 
 public class MovieDto
 {
-    public required string Id { get; set; }
+    public required Guid Id { get; set; }
     
     public required string AuthorName { get; set; }
     
@@ -22,5 +22,5 @@ public class MovieDto
     
     public required string Cast { get; set; }
     
-    public required List<Event> Events { get; set; } 
+    public required List<EventDto> Events { get; set; } 
 }

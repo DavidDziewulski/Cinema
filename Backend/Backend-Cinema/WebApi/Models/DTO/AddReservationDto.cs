@@ -2,7 +2,6 @@ namespace WebApi.Models.DTO;
 
 public class AddReservationDto
 {
-    private Guid EventId { get; set; }
-    
-    private int Amount { get; set; }
+    public Guid EventId { get; set; }
+    public int Amount { get; set; }
 }

@@ -2,7 +2,7 @@ namespace WebApi.Models;
 
 public class Event
 {
-    public string Id { get; set; }
+    public Guid Id { get; set; }
     public string Title { get; set; }
     public string Start { get; set; }
     public string End { get; set; }
@@ -10,5 +10,9 @@ public class Event
     public double Price { get; set; }
     public string Description { get; set; }
     
-    public string MovieId { get; set; }
+    public Guid MovieId { get; set; }
+    
+    public Movie Movie { get; set; }
+    
+    public List<Reservation> Reservations { get; set; }
 }
