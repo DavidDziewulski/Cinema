@@ -20,17 +20,6 @@ namespace WebApi.Controllers
         // [Authorize]
         public async Task<ActionResult<List<MovieListItemDto>>> GetMovies()
         { 
-            // var claims = User.Claims.ToList();
-            // Opcjonalnie: Uzyskaj szczegóły zalogowanego użytkownika
-            // var userName = User.FindFirstValue(ClaimTypes.Email);
-            // var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Pobiera ID zalogowanego użytkownika
-            // var user = await _userManager.FindByIdAsync(userId);
-            //
-            // if (user == null)
-            // {
-            //     return Unauthorized("User not found");
-            // }
-            
             var movieList = await _context.Movies.Select(movie => new MovieListItemDto()
             {
                 Id = movie.Id,
