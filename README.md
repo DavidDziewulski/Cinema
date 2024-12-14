@@ -111,9 +111,6 @@ Składa się z backendu i frontendu, oferując użytkownikom funkcjonalności ta
 ### Podgląd Rezerwacji 
 ![image](https://github.com/user-attachments/assets/1d66a521-b13d-47f5-9752-056b7ece8b1e)
 
-### Podgląd Rezerwacji 
-![image](https://github.com/user-attachments/assets/1d66a521-b13d-47f5-9752-056b7ece8b1e)
-
 ### Refresh Token 
 ![image](https://github.com/user-attachments/assets/28515128-0ce2-420e-8109-f17e73c7ad15)
 
