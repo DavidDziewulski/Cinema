@@ -116,7 +116,7 @@ Składa się z backendu i frontendu, oferując użytkownikom funkcjonalności ta
 
 
 ### Podgląd Rezerwacji 
-![Rezerwacja biletów](![image]![image](https://github.com/user-attachments/assets/1d66a521-b13d-47f5-9752-056b7ece8b1e))
+![Rezerwacja biletów](![image](https://github.com/user-attachments/assets/1d66a521-b13d-47f5-9752-056b7ece8b1e))
 
 ### Podgląd Rezerwacji 
 ![Rezerwacja biletów](![image]![image](https://github.com/user-attachments/assets/1d66a521-b13d-47f5-9752-056b7ece8b1e))
