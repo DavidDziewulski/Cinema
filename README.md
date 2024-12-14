@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/664847e2-91af-4a28-a515-22af4192e272)# Aplikacja Rezerwacji Kina
+# Aplikacja Rezerwacji Kina
 
 ## Opis projektu
 
