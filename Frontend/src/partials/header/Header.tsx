@@ -1,12 +1,7 @@
-
 import { useNavigate } from 'react-router-dom';
 import { Profile } from './components/Profile';
 
-type Props = {
-  isSearch?: boolean;
-}
-
-export const Header = ({isSearch = true }: Props) => {
+export const Header = () => {
   const nav = useNavigate();
 
   return (
@@ -18,11 +13,7 @@ export const Header = ({isSearch = true }: Props) => {
         alt="">
         </img>
       <div className="w-1/3"></div>
-      {/* {isSearch && (
-        <SearchBar />
-      )} */}
       <div className="w-1/3 flex justify-end items-center space-x-4">
-        {/* <span className="text-sm font-medium">HOME</span> */}
         <Profile />
       </div>
     </header>

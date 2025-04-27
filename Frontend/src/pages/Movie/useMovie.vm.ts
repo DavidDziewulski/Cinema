@@ -1,4 +1,3 @@
-import { Event } from "@/api/types/Movie";
 import { useGetMovie } from "@/hooks/useGetMovie";
 import { useState } from "react";
 

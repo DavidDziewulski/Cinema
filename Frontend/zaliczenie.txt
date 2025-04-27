@@ -1,0 +1,5 @@
+Dzień dobry, 
+
+W ponizej znajduję się link do repozytorium, gdzie został umieszczony kod źródłowy oraz Readme.
+
+https://github.com/DavidDziewulski/Cinema

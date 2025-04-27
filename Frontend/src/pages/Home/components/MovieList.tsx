@@ -5,7 +5,6 @@ import { Spinner } from "@/components/spinner";
 import { ErrorDisplay } from "@/components/error-display";
 import { truncateText } from "@/lib/utils";
 
-// Przykładowe dane dla kart
 export const MovieList = () => {
   const vm = useMovieListVm();
 
@@ -25,7 +24,7 @@ export const MovieList = () => {
     <Card
       onClick={() => vm.navigate(`/movie/${card.id}`)}
       key={card.id}
-      className="shadow-lg hover:shadow-2xl transition-transform duration-300 transform hover:scale-105 cursor-pointer" // Dodano animację i cursor-pointer
+      className="shadow-lg hover:shadow-2xl transition-transform duration-300 transform hover:scale-105 cursor-pointer"
     >
       <CardContent className="p-0">
         <div

@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import { queryClient } from "./lib/queryClient/queryClient";
 import { RouterProvider } from "./router/Router";
+import { InstallPWA } from "./components/InstallPWA";
 
 export const App = () => {
   return (
@@ -22,6 +23,7 @@ export const App = () => {
         />
         <QueryClientProvider client={queryClient}>
           <RouterProvider />
+          <InstallPWA />
         </QueryClientProvider>
    </>
   );

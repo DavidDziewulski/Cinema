@@ -9,9 +9,7 @@ import { useStore } from "@/hooks/useStore";
 import { paths } from "@/router/Router";
 import { User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-// Todo
-// 1. Add log-out
-// 2. Add re-direct to calendary page
+
 export const Profile = () => {
   const nav = useNavigate();
 

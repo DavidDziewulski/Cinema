@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"; // Upewnij się, że masz komponent Button z shadcn/ui
-import { Input } from "@/components/ui/input"; // Komponent Input z shadcn/ui
+import { Button } from "@/components/ui/button"; 
+import { Input } from "@/components/ui/input";
 import { useBookReservation } from "@/hooks/useBookTickets";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
